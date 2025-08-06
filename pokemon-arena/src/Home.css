@@ -1,3 +1,12 @@
+.home{
+    background-image: url("./background.png");
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
 .home a{
     border: 1px solid black;
     padding: 2ch;
@@ -12,5 +21,25 @@
     text-transform: capitalize;
 }
 .home p{
-    max-width: 60vw;
+    max-width: 80ch;
+    padding: 0;
+    margin: 0;
+}
+.logo img{
+    width: 80px;
+    justify-self: center;
+}
+.logo{
+    position: absolute;
+    bottom: 0;
+    height: 120px;
+    margin-top: 5em;
+    left: 50%;
+    justify-content: center;
+    flex-direction: column;
+}
+.logo div{
+    width: 20ch;
+    position: relative;
+    left: -60%;
 }

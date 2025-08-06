@@ -6,7 +6,7 @@ JIRA: https://www.atlassian.com/software/jira
 
 - yepitsaname
 - Austin
-
+- Draysen
 ## To initialize REACT application
 
 - navigate to /pokemon-arena

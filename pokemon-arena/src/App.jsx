@@ -5,6 +5,7 @@ import Shop from './Shop';
 import OpenPack from './OpenPack';
 import Battle from './Battle';
 import AppContext from './AppContext';
+import {useState} from 'react';
 
 export default function App() {
   const [funds, setFunds] = useState(1000)

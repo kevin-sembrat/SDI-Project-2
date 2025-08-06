@@ -17,7 +17,7 @@ function Shop(){
       try {
         const res = await fetch('https://api.pokemontcg.io/v2/cards?q=set.name:Fossil nationalPokedexNumbers:[1 TO 151]', {
       headers: {
-        'X-Api-Key': '78290a77-238d-4f3f-a8d7-b255c3d425df' 
+        'X-Api-Key': '' 
       }
     })
         if (!res.ok) throw new Error(`HTTP ${res.status}`);

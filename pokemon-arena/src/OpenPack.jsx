@@ -2,8 +2,63 @@ import { useState } from "react"
 import { Link } from "react-router";
 import Pack from "./Pack";
 import Card from "./Card";
+import './OpenPack.css'
 
 const mock_cards=[
+  {
+    "name": "Tangela",
+    "hp": "50",
+    "images": {
+      "small": "https://images.pokemontcg.io/base1/66.png",
+      "large": "https://images.pokemontcg.io/base1/66_hires.png"
+    },
+    "rarity": "Common"
+  },
+  {
+    "name": "Vulpix",
+    "hp": "50",
+    "images": {
+      "small": "https://images.pokemontcg.io/base1/68.png",
+      "large": "https://images.pokemontcg.io/base1/68_hires.png"
+    },
+    "rarity": "Common"
+  },
+  {
+    "name": "Weedle",
+    "hp": "40",
+    "images": {
+      "small": "https://images.pokemontcg.io/base1/69.png",
+      "large": "https://images.pokemontcg.io/base1/69_hires.png"
+    },
+    "rarity": "Common"
+  },
+  {
+    "name": "Tangela",
+    "hp": "50",
+    "images": {
+      "small": "https://images.pokemontcg.io/base1/66.png",
+      "large": "https://images.pokemontcg.io/base1/66_hires.png"
+    },
+    "rarity": "Common"
+  },
+  {
+    "name": "Vulpix",
+    "hp": "50",
+    "images": {
+      "small": "https://images.pokemontcg.io/base1/68.png",
+      "large": "https://images.pokemontcg.io/base1/68_hires.png"
+    },
+    "rarity": "Common"
+  },
+  {
+    "name": "Weedle",
+    "hp": "40",
+    "images": {
+      "small": "https://images.pokemontcg.io/base1/69.png",
+      "large": "https://images.pokemontcg.io/base1/69_hires.png"
+    },
+    "rarity": "Common"
+  },
   {
     "name": "Tangela",
     "hp": "50",

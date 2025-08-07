@@ -26,7 +26,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
-        <Route path="/open-packs" element={<OpenPack />} />
+        <Route path="/open-packs/:packs" element={<OpenPack />} />
         <Route path="/battle" element={<Battle />} />
       </Routes>
     </AppContext.Provider>

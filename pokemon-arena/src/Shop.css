@@ -1,0 +1,61 @@
+.shop-container {
+  padding: 20px;
+  background-color: #d51111;
+  font-family: pkmn-rbygsc;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 97vh;
+}
+.shop-container-shader {
+    background-color: rgba(73, 213, 248, 0.9);
+  -webkit-mask: linear-gradient(-35deg, #fff, #aaaa, #0000,#fff, #0000, #fff, #0000);
+   mask: linear-gradient(-35deg,#fff, #aaaa, #0000,#fff, #0000, #fff, #0000);
+   position: absolute;
+   left: 0;
+   top: 0;
+   height: 100%;
+   width: 100%;
+}
+.shop-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  margin-inline: 30px;
+  padding: 0;
+  height: 1ch;
+}
+.shop-funds {
+  margin-bottom: 70px;
+  text-align: left;
+  font-size: 30px;
+  position: relative;
+  width: 100%;
+  margin-inline: 30px;
+  padding: 0;
+  height: 1ch;
+}
+.Checkout a {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #05f739;
+  color: #000000;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  position: relative;
+}
+
+.cart {
+   margin-right: 30px;
+   margin-inline: 30px;
+}
+.pack-card{
+    position: relative;
+    margin-left: 30px;
+    display: flex;
+}
+

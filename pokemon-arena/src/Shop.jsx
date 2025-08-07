@@ -32,7 +32,7 @@ function Shop() {
     },
   ];
 
- function addToCart(pack) {
+function addToCart(pack) {
   if (funds >= pack.price) {
     setCart((prevPacks) => [...prevPacks, pack]);
     setFunds((prevFunds) => prevFunds - pack.price);
@@ -55,18 +55,15 @@ function Shop() {
 
   return (
   <div className="shop-container">
+    <div className="shop-container-shader"></div>
     <h1 className="shop-title">Pokémon Shop</h1>
     <p className="shop-funds">Money: ₱{funds}</p>
-  <div className="Checkout">
-      <Link to='/open-packs'>Open Packs</Link>
-    </div>
-
-    <div className="pack-list">
+    <div className="pack-card">
       {packs.map((pack) => (
         <Pack
           key={pack.id}
           pack={pack}
-          count={"₽" + pack.price}
+          count={"$" + pack.price}
           clickHandler={() => addToCart(pack)}
         />
       ))}
@@ -80,12 +77,15 @@ function Shop() {
         <ul>
           {cart.map((item, index) => (
             <li key={index}>
-             {item.name} - ₱{item.price} {" "}
-             <button onClick={() => removeFromCart(item.id)}>Remove</button> 
+              {item.name} - ${item.price} {" "}
+              <button onClick={() => removeFromCart(item.id)}>Remove</button> 
             </li>
           ))}
         </ul>
       )}
+      <div className="Checkout">
+        <Link to={`/open-packs/'${encodeURIComponent(JSON.stringify(cart))}'`}>Open Packs</Link>
+      </div>
     </div>
   </div>
 );

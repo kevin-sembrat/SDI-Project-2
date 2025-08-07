@@ -1,4 +1,5 @@
 import { getPackImage } from "./utils";
+import  './Pack.css' 
 
 export default function Pack({pack, count, clickHandler=()=>{}}){
   return (

@@ -77,4 +77,27 @@ ul {
 .card-box.enemy {
   border: 1px dashed #fff;
   min-height: 150px;
+  width: auto;
+}
+
+.selectable {
+  padding: 0.5rem;
+  /* cursor: pointer; */
+  user-select: none;
+  transition: background-color 0.2s;
+}
+
+.selectable.selected {
+  background-color: #2cff21;
+  color: black;
+  font-weight: bold;
+}
+
+.selectable.selected.enemy {
+  background-color: #e74e40;
+  color: black;
+}
+
+.enemy.selected-menu {
+  justify-items: right;
 }

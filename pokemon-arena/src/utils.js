@@ -1,3 +1,5 @@
+const API_KEY = "78290a77-238d-4f3f-a8d7-b255c3d425df";
+
 export async function getPack(callback, set='base1'){
   await fetch(...createGetRequest(set))
     .then(res => handleResponse(res))
@@ -40,7 +42,7 @@ function createGetRequest(set){
     {
       method: "GET",
       mode: "cors",
-      headers: { "x-api-key": "68cb9342-d1ee-47cb-a6f1-4d7bf1a081dc" }
+      headers: { "x-api-key": API_KEY }
     }
   ]
 }

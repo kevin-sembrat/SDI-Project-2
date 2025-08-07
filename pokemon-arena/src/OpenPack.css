@@ -1,12 +1,32 @@
 .open-pack{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  position: relative;
+  background-color: rgba(239, 52, 18, 0.7);
 }
+
+.open-pack-shader{
+  background-color: rgba(73, 213, 248, 0.9);
+  -webkit-mask: linear-gradient(-35deg, #fff, #aaaa, #0000,#fff, #0000, #fff, #0000);
+   mask: linear-gradient(-35deg,#fff, #aaaa, #0000,#fff, #0000, #fff, #0000);
+   position: absolute;
+   left: 0;
+   top: 0;
+   height: 100%;
+   width: 100%;
+}
+
 .pack-carousel{
   display: flex;
   overflow-y: hidden;
   width: 100%;
+  position: relative;
+  background-color: rgba(0,0,0,0.4);
+  text-align: center;
+  font-size: 30px;
+  font-weight: 900;
+  margin: 30px;
 }
 .card-view{
   display: grid;
@@ -14,6 +34,10 @@
   grid-template-rows: 1fr auto;
   grid-template-areas: "header header header";
   justify-items: center;
+  background-color: rgba(0,0,0,0.1);
+  position: relative;
+  margin: 30px;
+  margin-top: 0;
 }
 .card-view h3{
   grid-area: header;
@@ -21,9 +45,49 @@
 }
 
 .card-view img{
+  margin: 1em;
 }
-.party-selection{}
+
+.party-selection{
+  background-color: rgba(0,0,0,0.1);
+  width: 500px;
+  height: 1040px;
+  padding: 1em;
+}
+
+.party-selection h3{
+  margin-top: 0;
+  padding-top: 1em;
+  text-align: center;
+}
 
 .open-pack a{
+  display: block;
+  border: 1px solid black;
+  padding: 2ch;
+  background-color: rgba(30,30,30, 0.7);
+  border-radius: 2ch;
+  color: rgb(220,220,220);
+  margin-block: 4em;
+  text-decoration: none;
+  text-transform: uppercase;
+  height: 3ch;
+  font-size: 20px;
+  width: 6ch;
+  justify-self: center;
+  margin-inline: auto;
+}
+
+.open-pack a:hover{
+  background-color: rgb(60,60,60);
+}
+
+.open-pack .wrapper{
+  position: relative;
+  margin: 30px;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
 }

@@ -1,9 +1,11 @@
 import { useContext } from 'react';
 import { useState, useEffect } from 'react';
+// import AppContext from './AppContext';
 
 
 
 function Shop(){
+  // const {credits, setCredits} = useContext(AppContext)
   const [balance, setBalance] = useState(1000);
   const [packs, setPacks] = useState([]);
   const [puchased, setPurchased] =useState([]);
@@ -17,7 +19,7 @@ function Shop(){
       try {
         const res = await fetch('https://api.pokemontcg.io/v2/cards?q=set.name:Fossil nationalPokedexNumbers:[1 TO 151]', {
       headers: {
-        'X-Api-Key': '' 
+        'X-Api-Key': ''
       }
     })
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -38,7 +40,7 @@ function Shop(){
 // console.log(data)
 
 
-  return ( 
+  return (
     <>
   <div>Shop</div>
   <h1>HELLO</h1>
@@ -52,7 +54,7 @@ function Shop(){
         src={card.images.small}
         alt="card image"
       ></img>
-    })}  
+    })}
   </ul>
   </>
   )

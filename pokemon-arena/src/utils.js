@@ -46,3 +46,6 @@ function createGetRequest(set){
     }
   ]
 }
+export function getPackImage(pack){
+  return pack?.image || null;
+}

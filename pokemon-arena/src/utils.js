@@ -1,4 +1,4 @@
-const API_KEY = "78290a77-238d-4f3f-a8d7-b255c3d425df";
+const API_KEY = "";
 
 export async function getSet(callback=(cards)=>{console.log(cards)}, set='base1'){
   await fetch(...createGetRequest(set))

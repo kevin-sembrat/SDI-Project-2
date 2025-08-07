@@ -6,15 +6,19 @@ import OpenPack from './OpenPack';
 import Battle from './Battle';
 import AppContext from './AppContext';
 import {useEffect, useState} from 'react';
-import { getPack } from './utils';
+import { getSet } from './utils';
 
 export default function App() {
   const [funds, setFunds] = useState(1000);
   const [packs, setPacks] = useState([]);
+  const sets = [{name: 'Base', id: 'base1'}]
 
   useEffect( ()=>{
-    getPack((pack)=>{setPacks([...packs, pack])})
+    sets.forEach( set => {
+      getSet((cards)=>{setPacks([...packs, cards])}, set.id)
+    });
   },[])
+
   return (
     <AppContext.Provider value={{credits: funds, setCredits: setFunds, cardPacks: packs}}>
       <Routes>

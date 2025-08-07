@@ -1,6 +1,6 @@
 const API_KEY = "78290a77-238d-4f3f-a8d7-b255c3d425df";
 
-export async function getPack(callback, set='base1'){
+export async function getSet(callback=(cards)=>{console.log(cards)}, set='base1'){
   await fetch(...createGetRequest(set))
     .then(res => handleResponse(res))
     .then(json => conditionSet(json.data))

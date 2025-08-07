@@ -7,9 +7,11 @@
   flex-wrap: wrap;
   justify-content: space-between;
   height: 97vh;
+  background-image: url("/Users/austinadams/projects/SDI-Project-2/pokemon-arena/public/Pokémon Store Adventure.png");
+    background-size: cover;
 }
 .shop-container-shader {
-    background-color: rgba(73, 213, 248, 0.9);
+    background-color: rgba(16, 38, 44, 0.9);
   -webkit-mask: linear-gradient(-35deg, #fff, #aaaa, #0000,#fff, #0000, #fff, #0000);
    mask: linear-gradient(-35deg,#fff, #aaaa, #0000,#fff, #0000, #fff, #0000);
    position: absolute;

@@ -1,4 +1,4 @@
-const API_KEY = "";
+const API_KEY = "68cb9342-d1ee-47cb-a6f1-4d7bf1a081dc";
 
 export async function getSet(callback=(cards)=>{console.log(cards)}, set='base1'){
   await fetch(...createGetRequest(set))
@@ -45,4 +45,12 @@ function createGetRequest(set){
       headers: { "x-api-key": API_KEY }
     }
   ]
+}
+
+export function getCardImage(card){
+  return card?.images.small || null;
+}
+
+export function getPackImage(pack){
+  return pack?.image || null;
 }

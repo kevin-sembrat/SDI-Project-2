@@ -114,18 +114,21 @@ export default function OpenPack(){
 
   return(
     <div className="open-pack">
+      <div className="open-pack-shader" />
       <div className='pack-carousel'>
         {mock_packs.map( pack => <Pack key={pack.id} pack={pack} count={pack.count}/>)}
       </div>
       <div className='card-view'>
         <h3>Available Cards</h3>
-        {mock_cards.map( card => <Card key={card.name} card={card}/> )}
+        {mock_cards.map((card, index ) => <Card key={card.name + index} card={card}/> )}
       </div>
-      <div className='party-selection'>
-        <h3>Selected</h3>
-        <Card card={mock_cards[0]} />
+      <div className="wrapper">
+        <div className='party-selection'>
+          <h3>Selected</h3>
+          <Card card={mock_cards[0]} />
+        </div>
+        <Link to='/battle'>Battle</Link>
       </div>
-      <Link to='/battle'>Battle</Link>
     </div>
   )
 }

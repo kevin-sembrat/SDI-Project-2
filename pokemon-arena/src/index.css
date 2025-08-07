@@ -1,5 +1,11 @@
+@font-face{
+  font-family: 'pkmn-rbygsc';
+  src: url('./PKMN RBYGSC.ttf')
+}
+
 body{
-margin: 0;
+  margin: 0;
+  font-family: pkmn-rbygsc;
 }
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;

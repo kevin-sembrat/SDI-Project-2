@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { useState, useEffect } from 'react';
 import './Shop.css'
-import  Pack  from './Pack' 
+import  Pack  from './Pack'
 // import AppContext from './AppContext';
 
 
@@ -35,8 +35,8 @@ function Shop() {
     if(funds>=pack.price)
       setCart((prevPacks) => [...prevPacks, pack]);
   }
-  function removeFromCart()
-    
+  function removeFromCart(){}
+
 
   return (
   <div className="shop-container">
@@ -75,14 +75,14 @@ function Shop() {
 export default Shop;
 
 //id, count, image
-//set base1 //exporting packData including id/count/image and base1. 
+//set base1 //exporting packData including id/count/image and base1.
 //..spread operator for adding
 //splicing for removing create new array to push packs into so to not mutate
 //splice index with remove cart inde
 
 //fetch pack data
 // map through for data needed
-// 
+//
 // {
 //   "data": {
 //     "id": "swsh1",

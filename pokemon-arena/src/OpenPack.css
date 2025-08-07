@@ -1,0 +1,29 @@
+.open-pack{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.pack-carousel{
+  display: flex;
+  overflow-y: hidden;
+  width: 100%;
+}
+.card-view{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "header header header";
+  justify-items: center;
+}
+.card-view h3{
+  grid-area: header;
+  text-align: center;
+}
+
+.card-view img{
+}
+.party-selection{}
+
+.open-pack a{
+
+}

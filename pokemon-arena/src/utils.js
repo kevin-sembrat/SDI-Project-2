@@ -30,7 +30,11 @@ function conditionCardData(card){
   if(card.supertype !== "Pokémon"){ return null }
   return {
     "name": card.name,
+    "level": card.level,
     "hp": card.hp,
+    "types": card.types,
+    "weaknessess": card?.weaknesses || [],
+    "resistances": card?.resistances || [],
     "images": card.images,
     "rarity": card.rarity
   }

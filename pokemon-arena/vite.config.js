@@ -4,7 +4,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      // any request starting with /api/nhl will be forwarded...
+      // any request starting with /api/poke will be forwarded...
       "/api/poke": {
         target: "https://api.pokemontcg.io/v2/cards?q=set.name:Fossil nationalPokedexNumbers:[1 TO 151]",
         changeOrigin: true,

@@ -50,7 +50,7 @@ export default function OpenPack(){
           <h3>Selected</h3>
           {selection.map((card, index ) => <Card key={card.name + index} card={card} clickHandler={() => {addRemoveHandler(card, index, selection, setCards, setSelection)}}/> )}
         </div>
-        <Link to='/battle'>Battle</Link>
+        <Link to={`/battle/${encodeURIComponent(JSON.stringify(selection))}`}>Battle</Link>
       </div>
     </div>
   )

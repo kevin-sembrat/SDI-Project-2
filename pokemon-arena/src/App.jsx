@@ -29,6 +29,7 @@ export default function App() {
         <Route path="/open-packs" element={<OpenPack />} />
         <Route path="/open-packs/:packs" element={<OpenPack />} />
         <Route path="/battle" element={<Battle />} />
+        <Route path="/battle/:pokemon" element={<Battle />} />
       </Routes>
     </AppContext.Provider>
   );

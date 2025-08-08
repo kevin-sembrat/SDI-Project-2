@@ -4,15 +4,20 @@ export default function Home() {
   return (
     <div className="home">
       <header>
-        <h1>Getting started</h1>
+        <h1>Dumpster Fire Duels</h1>
+        <h2>Getting started</h2>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum
-          obcaecati recusandae aperiam minus eius aut temporibus assumenda
-          nesciunt voluptas voluptate. Ut provident, incidunt autem eaque
-          inventore repellendus repellat ipsa. Architecto.
-        </p>
+         <ul>
+          <li>Use Pokédollars to buy Pokémon card packs.</li>
+          <li>Open packs and pick your favorite Pokémon.</li>
+          <li>Choose a Pokémon and place your bets.</li>
+          <li>Battle!</li>
+        </ul>
+
+    </p>
         <Link to="/shop">Start Shopping</Link>
       </header>
+      <h3>Dumpster Fire Duels, <span className="slogan"> Winning Starts Here</span></h3>
       <div className="logo">
         <div>
           <img alt="Chat Gpt Logo" src="./ChatGPT-Logo-PNG.png" />

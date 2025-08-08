@@ -21,13 +21,13 @@ function Shop() {
     {
       id: 2,
       name: "Mid",
-      price: 500,
+      price: 450,
       image: "https://loosepacks.com/cdn/shop/files/Untitled_-_2024-06-11T141848.421.png?v=1745610115&width=713",
     },
     {
       id: 3,
       name: "Low",
-      price: 400,
+      price: 300,
       image: "https://loosepacks.com/cdn/shop/files/Untitled_-_2024-06-11T141857.864.png?v=1740867758&width=713",
     },
   ];

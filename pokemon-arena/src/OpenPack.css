@@ -4,7 +4,17 @@
   justify-content: center;
   position: relative;
   background-color: rgba(239, 52, 18, 0.7);
+  background-size: cover;
+  background-image: url('../public/ChatGPT Image Aug 8, 2025 at 07_40_07 AM.png');
 }
+
+/* .open-pack{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  background-color: rgba(239, 52, 18, 0.7);
+} */
 
 .open-pack-shader{
   background-color: rgba(73, 213, 248, 0.9);

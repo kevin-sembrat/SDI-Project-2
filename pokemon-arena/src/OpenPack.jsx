@@ -115,7 +115,6 @@ export default function OpenPack(){
   const {packs} = useParams();
 
   useEffect(()=>{
-    console.log(JSON.parse(packs.replaceAll("'","")))
     setPacksToOpen(JSON.parse(packs.replaceAll("'","")))
   },[])
 

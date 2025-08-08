@@ -15,7 +15,7 @@ export default function App() {
 
   useEffect( ()=>{
     sets.forEach( set => {
-      getSet((cards)=>{setPacks([...packs, cards])}, set.id)
+      getSet((cards)=>{setPacks([...packs, {[set.id]:cards}])}, set.id)
     });
   }, []);
 

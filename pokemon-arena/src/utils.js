@@ -52,14 +52,15 @@ export function conditionShopData(cart) {
         id: item.id,
         count: 1,
         set: "base1",
-        image: item.image
+        image: item.image,
+        name: item.name
       }})
     }
   })
   const conditionedData= []
   for(let key in counterObject) {
     conditionedData.push(counterObject[key])
-  } console.log(conditionedData)
+  } 
   return conditionedData
 }
 
@@ -80,4 +81,14 @@ export function getCardImage(card){
 
 export function getPackImage(pack){
   return pack?.image || null;
+}
+export function generatePack(cardPack, odds = 'Low'){
+  const commons = cardPack.filter(card => card.rarity == 'Common');
+  const uncommons = cardPack.filter(card => card.rarity == 'Uncommon');
+  const rares = cardPack.filter(card => card.rarity == 'Rare');
+  const holoRares = cardPack.filter(card => card.rarity == 'Rare Holo');
+
+  const low = [
+    [1.00, 0.00, 0.00, 0.00]
+  ]
 }

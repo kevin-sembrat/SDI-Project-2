@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import { Link, useParams } from "react-router";
 import Pack from "./Pack";
 import Card from "./Card";
 import './OpenPack.css'
+import {generatePack} from './utils'
+import AppContext from "./AppContext";
 
 const mock_cards=[
   {
@@ -113,11 +115,16 @@ export default function OpenPack(){
   const [selection, setSelection] = useState([]);
   const [packsToOpen, setPacksToOpen] = useState([]);
   const {packs} = useParams();
+  const [cards, setCards] = useState([]);
+  const {cardPacks} = useContext(AppContext);
 
   useEffect(()=>{
     setPacksToOpen(JSON.parse(packs.replaceAll("'","")))
   },[])
-
+  const openPackHandler = (pack) => {
+    generatePack(cardPacks[0][pack.set][0])
+    // console.log(cardPacks[0][pack.set][0])
+  }
   const addPokemonHandler = (card) => {
     if( selection.length < 6){setSelection((state) => [...state, card])}
   }
@@ -132,11 +139,11 @@ export default function OpenPack(){
     <div className="open-pack">
       <div className="open-pack-shader" />
       <div className='pack-carousel'>
-        {packsToOpen.map( pack => <Pack key={pack.id} pack={pack} count={pack.count}/>)}
+        {packsToOpen.map( pack => <Pack key={pack.id} pack={pack} count={pack.count} clickHandler={() => {openPackHandler(pack)}}/>)}
       </div>
       <div className='card-view'>
         <h3>Available Cards</h3>
-        {mock_cards.map((card, index ) => <Card key={card.name + index} card={card} clickHandler={() => {addPokemonHandler(card)}}/> )}
+        {cards.map((card, index ) => <Card key={card.name + index} card={card} clickHandler={() => {addPokemonHandler(card)}}/> )}
       </div>
       <div className="wrapper">
         <div className='party-selection'>

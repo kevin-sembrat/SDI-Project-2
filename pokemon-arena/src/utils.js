@@ -36,6 +36,29 @@ function conditionCardData(card){
   }
 }
 
+export function conditionShopData(cart) {
+  //count, id, set, image
+  const counterObject = {}
+  cart.forEach(item => {
+    if (counterObject.hasOwnProperty(item.id)) {
+      counterObject[item.id].count++
+    } else {
+     Object.assign( counterObject, {
+      [item.id]:{
+        id: item.id,
+        count: 1,
+        set: "base1",
+        image: item.image
+      }})
+    }
+  })
+  const conditionedData= []
+  for(let key in counterObject) {
+    conditionedData.push(counterObject[key])
+  } console.log(conditionedData)
+  return conditionedData
+}
+
 function createGetRequest(set){
   return [
     `https://api.pokemontcg.io/v2/cards?q=set.id:${set}`,

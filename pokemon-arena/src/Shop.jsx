@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import './Shop.css'
 import  Pack  from './Pack'
 import { Link } from 'react-router';
+import { conditionShopData } from './utils';
 // import AppContext from './AppContext';
 
 
@@ -41,7 +42,6 @@ function addToCart(pack) {
   }
 }
  const removeFromCart = (packId) => {
-  console.log("Removing pack with id:", packId);
   const packIndex = cart.findIndex(pack => pack.id === packId);
   if (packIndex > -1) {
     const priceToRefund = cart[packIndex].price;
@@ -51,9 +51,6 @@ function addToCart(pack) {
     setFunds((prevFunds) => prevFunds + priceToRefund);
   }
 };
-
-
-
 
   return (
   <div className="shop-container">
@@ -86,7 +83,7 @@ function addToCart(pack) {
         </ul>
       )}
       <div className="Checkout">
-        <Link to={`/open-packs/'${encodeURIComponent(JSON.stringify(cart))}'`}>Open Packs</Link>
+        <Link to={`/open-packs/'${encodeURIComponent(JSON.stringify(conditionShopData(cart)))}'`}>Open Packs</Link>
       </div>
     </div>
   </div>

@@ -30,10 +30,37 @@ function conditionCardData(card){
   if(card.supertype !== "Pokémon"){ return null }
   return {
     "name": card.name,
+    "level": card.level,
     "hp": card.hp,
+    "types": card.types,
+    "weaknessess": card?.weaknesses || [],
+    "resistances": card?.resistances || [],
     "images": card.images,
     "rarity": card.rarity
   }
+}
+
+export function conditionShopData(cart) {
+  //count, id, set, image
+  const counterObject = {}
+  cart.forEach(item => {
+    if (counterObject.hasOwnProperty(item.id)) {
+      counterObject[item.id].count++
+    } else {
+     Object.assign( counterObject, {
+      [item.id]:{
+        id: item.id,
+        count: 1,
+        set: "base1",
+        image: item.image
+      }})
+    }
+  })
+  const conditionedData= []
+  for(let key in counterObject) {
+    conditionedData.push(counterObject[key])
+  } console.log(conditionedData)
+  return conditionedData
 }
 
 function createGetRequest(set){

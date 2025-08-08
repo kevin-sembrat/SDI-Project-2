@@ -1,8 +1,9 @@
 import { useContext } from 'react';
 import { useState, useEffect } from 'react';
 import './Shop.css'
-import  Pack  from './Pack' 
-import { Link } from 'react-router'
+import  Pack  from './Pack'
+import { Link } from 'react-router';
+import { conditionShopData } from './utils';
 // import AppContext from './AppContext';
 
 
@@ -21,13 +22,13 @@ function Shop() {
     {
       id: 2,
       name: "Mid",
-      price: 500,
+      price: 450,
       image: "https://loosepacks.com/cdn/shop/files/Untitled_-_2024-06-11T141848.421.png?v=1745610115&width=713",
     },
     {
       id: 3,
       name: "Low",
-      price: 400,
+      price: 300,
       image: "https://loosepacks.com/cdn/shop/files/Untitled_-_2024-06-11T141857.864.png?v=1740867758&width=713",
     },
   ];
@@ -40,18 +41,16 @@ function addToCart(pack) {
     alert("Not enough funds!");
   }
 }
-  const removeFromCart = (packId) => {
+ const removeFromCart = (packId) => {
   const packIndex = cart.findIndex(pack => pack.id === packId);
+  if (packIndex > -1) {
+    const priceToRefund = cart[packIndex].price;
     let updatedCart = [...cart];
-      if (packIndex > -1) {
     updatedCart.splice(packIndex, 1);
     setCart(updatedCart);
-    setFunds((prevFunds) => prevFunds + cart[packIndex].price);
+    setFunds((prevFunds) => prevFunds + priceToRefund);
   }
 };
-  
-
-
 
   return (
   <div className="shop-container">
@@ -78,13 +77,13 @@ function addToCart(pack) {
           {cart.map((item, index) => (
             <li key={index}>
               {item.name} - ${item.price} {" "}
-              <button onClick={() => removeFromCart(item.id)}>Remove</button> 
+              <button onClick={() => removeFromCart(item.id)}>Remove</button>
             </li>
           ))}
         </ul>
       )}
       <div className="Checkout">
-        <Link to={`/open-packs/'${encodeURIComponent(JSON.stringify(cart))}'`}>Open Packs</Link>
+        <Link to={`/open-packs/'${encodeURIComponent(JSON.stringify(conditionShopData(cart)))}'`}>Open Packs</Link>
       </div>
     </div>
   </div>

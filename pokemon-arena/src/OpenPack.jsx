@@ -1,5 +1,5 @@
-import { useState } from "react"
-import { Link } from "react-router";
+import { useState, useEffect } from "react"
+import { Link, useParams } from "react-router";
 import Pack from "./Pack";
 import Card from "./Card";
 import './OpenPack.css'
@@ -111,6 +111,13 @@ const mock_packs = [
 
 export default function OpenPack(){
   const [selection, setSelection] = useState([]);
+  const [packsToOpen, setPacksToOpen] = useState([]);
+  const {packs} = useParams();
+
+  useEffect(()=>{
+    setPacksToOpen(JSON.parse(packs.replaceAll("'","")))
+  },[])
+
   const addPokemonHandler = (card) => {
     if( selection.length < 6){setSelection((state) => [...state, card])}
   }
@@ -125,7 +132,7 @@ export default function OpenPack(){
     <div className="open-pack">
       <div className="open-pack-shader" />
       <div className='pack-carousel'>
-        {mock_packs.map( pack => <Pack key={pack.id} pack={pack} count={pack.count}/>)}
+        {packsToOpen.map( pack => <Pack key={pack.id} pack={pack} count={pack.count}/>)}
       </div>
       <div className='card-view'>
         <h3>Available Cards</h3>

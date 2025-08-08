@@ -7,7 +7,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   height: 97vh;
-  background-image: url("/Users/austinadams/projects/SDI-Project-2/pokemon-arena/public/Pokémon Store Adventure.png");
+  background-image: url("./Pokémon Store Adventure.png");
     background-size: cover;
 }
 .shop-container-shader {
@@ -19,6 +19,7 @@
    top: 0;
    height: 100%;
    width: 100%;
+   pointer-events: none;
 }
 .shop-title {
   font-size: 2rem;

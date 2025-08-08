@@ -60,7 +60,7 @@ export function conditionShopData(cart) {
   const conditionedData= []
   for(let key in counterObject) {
     conditionedData.push(counterObject[key])
-  } 
+  }
   return conditionedData
 }
 
@@ -82,13 +82,70 @@ export function getCardImage(card){
 export function getPackImage(pack){
   return pack?.image || null;
 }
-export function generatePack(cardPack, odds = 'Low'){
+
+export function addRemoveHandler(item, index=0, array=[], add=()=>{}, remove=()=>{}) {
+    add((state) => [...state, item])
+    if(array.length > 0){
+      let tempArray = array.map(entry => entry);
+      tempArray.splice(index, 1);
+      remove(tempArray);
+    }
+  }
+
+export function generatePack(cardPack, odds){
   const commons = cardPack.filter(card => card.rarity == 'Common');
   const uncommons = cardPack.filter(card => card.rarity == 'Uncommon');
   const rares = cardPack.filter(card => card.rarity == 'Rare');
   const holoRares = cardPack.filter(card => card.rarity == 'Rare Holo');
 
-  const low = [
-    [1.00, 0.00, 0.00, 0.00]
-  ]
+  const COMMON = 0; const UNCOMMON = 1; const RARE = 2; const RARE_HOLO = 3
+
+  const PULL_RATES = {
+    'Low': [
+      [1.00, 0.00, 0.00, 0.00],
+      [1.00, 0.00, 0.00, 0.00],
+      [1.00, 0.00, 0.00, 0.00],
+      [0.70, 1.00, 0.00, 0.00],
+      [0.50, 0.90, 1.00, 0.10]
+    ],
+    'Mid': [
+      [1.00, 0.00, 0.00, 0.00],
+      [1.00, 0.00, 0.00, 0.00],
+      [1.00, 0.00, 0.00, 0.00],
+      [0.40, 1.00, 0.00, 0.00],
+      [0.30, 0.70, 1.00, 0.25]
+    ],
+    'Rare': [
+      [0.97, 0.99, 1.00, 0.00],
+      [0.97, 0.99, 1.00, 0.00],
+      [0.97, 0.99, 1.00, 0.00],
+      [0.00, 0.99, 1.00, 0.00],
+      [0.30, 0.00, 1.00, 0.25]
+    ]
+  };
+
+  let generatedCards = [];
+
+  for( let rates of PULL_RATES[odds] ){
+    let roll = Math.random();
+
+    if(roll <= rates[COMMON] && rates[COMMON] != 0 ){
+      roll = Math.floor(Math.random() * commons.length);
+      generatedCards.push(commons[roll]);
+    } else if ( roll <= rates[UNCOMMON] && rates[UNCOMMON] != 0 ){
+      roll = Math.floor(Math.random() * uncommons.length);
+      generatedCards.push(uncommons[roll]);
+    } else if ( roll <= rates[RARE] && rates[RARE] != 0 ){
+      if( Math.random() < rates[RARE_HOLO] && rates[RARE_HOLO] != 0 ){
+        roll = Math.floor(Math.random() * holoRares.length);
+        generatedCards.push(holoRares[roll]);
+      } else {
+        roll = Math.floor(Math.random() * rares.length);
+        generatedCards.push(rares[roll]);
+      }
+    }
+
+  }
+
+  return generatedCards;
 }

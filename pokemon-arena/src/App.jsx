@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import { getSet } from "./utils";
 
 export default function App() {
-  const [funds, setFunds] = useState(1000);
+  const [funds, setFunds] = useState(5000);
   const [packs, setPacks] = useState([]);
   const sets = [{ name: "Base", id: "base1" }];
 

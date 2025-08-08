@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { useState, useEffect } from 'react';
 import './Shop.css'
 import  Pack  from './Pack' 
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom';
 // import AppContext from './AppContext';
 
 
@@ -40,13 +40,15 @@ function addToCart(pack) {
     alert("Not enough funds!");
   }
 }
-  const removeFromCart = (packId) => {
+ const removeFromCart = (packId) => {
+  console.log("Removing pack with id:", packId);
   const packIndex = cart.findIndex(pack => pack.id === packId);
+  if (packIndex > -1) {
+    const priceToRefund = cart[packIndex].price;  
     let updatedCart = [...cart];
-      if (packIndex > -1) {
     updatedCart.splice(packIndex, 1);
     setCart(updatedCart);
-    setFunds((prevFunds) => prevFunds + cart[packIndex].price);
+    setFunds((prevFunds) => prevFunds + priceToRefund);
   }
 };
   

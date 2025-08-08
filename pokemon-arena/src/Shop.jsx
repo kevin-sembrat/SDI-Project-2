@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 import { useState, useEffect } from 'react';
 import './Shop.css'
-import  Pack  from './Pack' 
-import { Link } from 'react-router-dom';
+import  Pack  from './Pack'
+import { Link } from 'react-router';
 // import AppContext from './AppContext';
 
 
@@ -44,14 +44,14 @@ function addToCart(pack) {
   console.log("Removing pack with id:", packId);
   const packIndex = cart.findIndex(pack => pack.id === packId);
   if (packIndex > -1) {
-    const priceToRefund = cart[packIndex].price;  
+    const priceToRefund = cart[packIndex].price;
     let updatedCart = [...cart];
     updatedCart.splice(packIndex, 1);
     setCart(updatedCart);
     setFunds((prevFunds) => prevFunds + priceToRefund);
   }
 };
-  
+
 
 
 
@@ -80,7 +80,7 @@ function addToCart(pack) {
           {cart.map((item, index) => (
             <li key={index}>
               {item.name} - ${item.price} {" "}
-              <button onClick={() => removeFromCart(item.id)}>Remove</button> 
+              <button onClick={() => removeFromCart(item.id)}>Remove</button>
             </li>
           ))}
         </ul>

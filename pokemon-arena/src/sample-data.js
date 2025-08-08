@@ -1,3 +1,113 @@
+export const playerDeck = [
+  {
+    name: "Charizard",
+    level: 60,
+    hp: 150,
+    types: ["fire", "flying"],
+    weaknesses: [{ type: "water", value: 30 }],
+    resistances: [{ type: "grass", value: 20 }],
+    images: {
+      small: "https://images.pokemontcg.io/base1/4.png",
+      large: "https://images.pokemontcg.io/base1/4_hires.png",
+    },
+    rarity: "Rare Holo",
+  },
+  {
+    name: "Blastoise",
+    level: 55,
+    hp: 160,
+    types: ["water"],
+    weaknesses: [{ type: "electric", value: 20 }],
+    resistances: [{ type: "fire", value: 30 }],
+    images: {
+      small: "https://images.pokemontcg.io/base1/2.png",
+      large: "https://images.pokemontcg.io/base1/2_hires.png",
+    },
+    rarity: "Rare Holo",
+  },
+  {
+    name: "Pikachu",
+    level: 40,
+    hp: 60,
+    types: ["electric"],
+    weaknesses: [{ type: "ground", value: 20 }],
+    resistances: [{ type: "steel", value: 20 }],
+    images: {
+      small: "https://images.pokemontcg.io/base1/58.png",
+      large: "https://images.pokemontcg.io/base1/58_hires.png",
+    },
+    rarity: "Common",
+  },
+  {
+    name: "Gyarados",
+    level: 45,
+    hp: 120,
+    types: ["water", "flying"],
+    weaknesses: [{ type: "electric", value: 40 }],
+    resistances: [{ type: "fighting", value: 20 }],
+    images: {
+      small: "https://images.pokemontcg.io/base1/6.png",
+      large: "https://images.pokemontcg.io/base1/6_hires.png",
+    },
+    rarity: "Rare Holo",
+  },
+];
+
+export const enemyDeck = [
+  {
+    name: "Machamp",
+    level: 55,
+    hp: 130,
+    types: ["fighting"],
+    weaknesses: [{ type: "psychic", value: 30 }],
+    resistances: [{ type: "rock", value: 20 }],
+    images: {
+      small: "https://images.pokemontcg.io/base1/8.png",
+      large: "https://images.pokemontcg.io/base1/8_hires.png",
+    },
+    rarity: "Rare Holo",
+  },
+  {
+    name: "Alakazam",
+    level: 52,
+    hp: 100,
+    types: ["psychic"],
+    weaknesses: [{ type: "dark", value: 20 }],
+    resistances: [{ type: "fighting", value: 30 }],
+    images: {
+      small: "https://images.pokemontcg.io/base1/1.png",
+      large: "https://images.pokemontcg.io/base1/1_hires.png",
+    },
+    rarity: "Rare Holo",
+  },
+  {
+    name: "Venusaur",
+    level: 58,
+    hp: 155,
+    types: ["grass", "poison"],
+    weaknesses: [{ type: "fire", value: 30 }],
+    resistances: [{ type: "water", value: 20 }],
+    images: {
+      small: "https://images.pokemontcg.io/base1/15.png",
+      large: "https://images.pokemontcg.io/base1/15_hires.png",
+    },
+    rarity: "Rare Holo",
+  },
+  {
+    name: "Arcanine",
+    level: 55,
+    hp: 140,
+    types: ["fire"],
+    weaknesses: [{ type: "water", value: 30 }],
+    resistances: [{ type: "grass", value: 30 }],
+    images: {
+      small: "https://images.pokemontcg.io/base1/23.png",
+      large: "https://images.pokemontcg.io/base1/23_hires.png",
+    },
+    rarity: "Uncommon",
+  },
+];
+
 export const sample_data = [
   {
     name: "Alakazam",

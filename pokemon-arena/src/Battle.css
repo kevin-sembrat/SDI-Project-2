@@ -14,6 +14,7 @@
 }
 
 .app {
+  background-image: url("./battle-background.png");
   display: grid;
   grid-template-areas:
     "sidebar-left header header sidebar-right"

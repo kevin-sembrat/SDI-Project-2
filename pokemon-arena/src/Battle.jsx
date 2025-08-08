@@ -3,8 +3,10 @@ import { useState, useEffect } from "react";
 import "./Battle.css";
 
 export default function Battle() {
-  let playerBenchCards = sample_data.slice(0, 12);
-  let enemyBenchCards = sample_data.slice(13, 25);
+  // let playerBenchCards = sample_data.slice(0, 12);
+  // let enemyBenchCards = sample_data.slice(13, 25);
+  // let playerBenchCards = sample_data.slice(0, 12);
+  // let enemyBenchCards = sample_data.slice(13, 25);
   // console.log(sample_data);
   const [playerCard, setPlayerCard] = useState([
     playerBenchCards[0].name,

@@ -20,7 +20,10 @@ export default function Battle() {
   const [plusButton, setPlusButton] = useState(true);
   const [minusButton, setMinusButton] = useState(true);
 
+  const [credits, setCredits] = useState(1000);
+
   const [openPopup, setOpenPopup] = useState(false);
+  const [battleResultOBJ, setBattleResultOBJ] = useState({});
 
   const [units, setUnits] = useState(10);
 
@@ -93,7 +96,7 @@ export default function Battle() {
         {/* TITLE AND GAME INFO */}
         <header className="header">
           <h3>Battle Board</h3>
-          <p>Credits: 1000</p>
+          <p>Credits: {credits}</p>
         </header>
         {/* PLAYER CARDS */}
         <aside className="player selected-menu">
@@ -146,6 +149,13 @@ export default function Battle() {
             openPopup={openPopup}
             setOpenPopup={setOpenPopup}
             responseFromGPT={responseFromGPT}
+            playerBets={playerBets}
+            units={units}
+            battleResultOBJ={battleResultOBJ}
+            playerCard={playerCard}
+            matchupPropBets={matchupPropBets}
+            setCredits={setCredits}
+            credits={credits}
           />
         ) : (
           <main className="board">
@@ -324,10 +334,14 @@ export default function Battle() {
             playerCard={playerCard}
             enemyCard={enemyCard}
             playerBets={playerBets}
-            units={units}
             setOpenPopup={setOpenPopup}
             responseFromGPT={responseFromGPT}
             setResponseFromGPT={setResponseFromGPT}
+            credits={credits}
+            setCredits={setCredits}
+            matchupPropBets={matchupPropBets}
+            units={units}
+            setBattleResultOBJ={setBattleResultOBJ}
           />
         </section>
       </div>

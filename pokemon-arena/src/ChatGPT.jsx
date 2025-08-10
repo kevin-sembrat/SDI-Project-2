@@ -15,8 +15,7 @@ export const ChatGPT = ({
   setBattleResultOBJ,
 }) => {
   const openai = new OpenAI({
-    apiKey:
-      "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",
+    //API KEY HERE
     dangerouslyAllowBrowser: true,
   });
 

@@ -4,12 +4,10 @@ import './Shop.css'
 import  Pack  from './Pack'
 import { Link } from 'react-router';
 import { conditionShopData } from './utils';
-// import AppContext from './AppContext';
-
-
+import AppContext from './AppContext';
 
 function Shop() {
-  const [funds, setFunds] = useState(1000);
+  const {credits, setCredits} = useContext(AppContext)
   const [cart, setCart] = useState([]);
 
   const packs = [
@@ -34,9 +32,9 @@ function Shop() {
   ];
 
 function addToCart(pack) {
-  if (funds >= pack.price) {
+  if (credits >= pack.price) {
     setCart((prevPacks) => [...prevPacks, pack]);
-    setFunds((prevFunds) => prevFunds - pack.price);
+    setCredits((prevFunds) => prevFunds - pack.price);
   } else {
     alert("Not enough funds!");
   }
@@ -48,7 +46,7 @@ function addToCart(pack) {
     let updatedCart = [...cart];
     updatedCart.splice(packIndex, 1);
     setCart(updatedCart);
-    setFunds((prevFunds) => prevFunds + priceToRefund);
+    setCredits((prevFunds) => prevFunds + priceToRefund);
   }
 };
 
@@ -56,7 +54,7 @@ function addToCart(pack) {
   <div className="shop-container">
     <div className="shop-container-shader"></div>
     <h1 className="shop-title">Pokémon Shop</h1>
-    <p className="shop-funds">Money: ₱{funds}</p>
+    <p className="shop-funds">Money: ₱{credits}</p>
     <div className="pack-card">
       {packs.map((pack) => (
         <Pack

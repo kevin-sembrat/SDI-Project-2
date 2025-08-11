@@ -5,8 +5,13 @@ import "./Battle.css";
 import { ChatGPT } from "./ChatGPT";
 import "./Popup.css";
 import { Popup } from "./Popup";
+import { useParams } from "react-router";
 
 export default function Battle() {
+
+  const { pokemon } = useParams();
+  let selectedCards = JSON.parse(pokemon.replaceAll("'","")) // <---- data from the open pack page ready for you to use
+
   let playerBenchCards = playerDeck;
   let enemyBenchCards = enemyDeck;
   // let moneylinebutton = false;

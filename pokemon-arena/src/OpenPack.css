@@ -6,6 +6,7 @@
   background-color: rgba(239, 52, 18, 0.7);
   background-size: cover;
   background-image: url('../public/ChatGPT Image Aug 8, 2025 at 07_40_07 AM.png');
+  align-items:start;
 }
 
 /* .open-pack{
@@ -39,6 +40,11 @@
   margin: 30px;
   min-height: 200px;
 }
+
+.pack-carousel .pack h3, .pack-carousel .pack p{
+  margin: 0;
+}
+
 .card-view{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -49,6 +55,7 @@
   position: relative;
   margin: 30px;
   margin-top: 0;
+  width: 820px;
 }
 .card-view h3{
   grid-area: header;
@@ -62,14 +69,19 @@
 .party-selection{
   background-color: rgba(0,0,0,0.1);
   width: 500px;
-  height: 1040px;
+  height: 1080px;
   padding: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  align-items: start;
 }
 
 .party-selection h3{
   margin-top: 0;
   padding-top: 1em;
   text-align: center;
+  width: 100%;
 }
 
 .open-pack a{

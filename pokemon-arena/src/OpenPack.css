@@ -55,7 +55,9 @@
   position: relative;
   margin: 30px;
   margin-top: 0;
-  width: 820px;
+  width: 840px;
+  height: 1080px;
+  overflow-y: scroll;
 }
 .card-view h3{
   grid-area: header;

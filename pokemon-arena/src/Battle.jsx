@@ -1,18 +1,19 @@
 import { sample_data, playerDeck, enemyDeck } from "./sample-data.js";
 import { generatePropBetsFromArray } from "./PropBetGenerator";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import "./Battle.css";
 import { ChatGPT } from "./ChatGPT";
 import "./Popup.css";
 import { Popup } from "./Popup";
 import { useParams } from "react-router";
+import AppContext from "./AppContext.js";
 
 export default function Battle() {
 
   const { pokemon } = useParams();
   let selectedCards = JSON.parse(pokemon.replaceAll("'","")) // <---- data from the open pack page ready for you to use
 
-  let playerBenchCards = playerDeck;
+  let playerBenchCards = selectedCards;
   let enemyBenchCards = enemyDeck;
   // let moneylinebutton = false;
 
@@ -25,7 +26,7 @@ export default function Battle() {
   const [plusButton, setPlusButton] = useState(true);
   const [minusButton, setMinusButton] = useState(true);
 
-  const [credits, setCredits] = useState(1000);
+  const {credits, setCredits} = useContext(AppContext);
 
   const [openPopup, setOpenPopup] = useState(false);
   const [battleResultOBJ, setBattleResultOBJ] = useState({});
@@ -105,9 +106,9 @@ export default function Battle() {
         </header>
         {/* PLAYER CARDS */}
         <aside className="player selected-menu">
-          {playerBenchCards.map((card) => (
+          {playerBenchCards.map((card, index) => (
             <p
-              key={card.name}
+              key={card.name + index}
               className={`selectable ${
                 playerCard.includes(card.name) ? "selected" : ""
               }`}
